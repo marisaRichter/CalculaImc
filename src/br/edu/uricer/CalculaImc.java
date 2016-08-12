@@ -23,6 +23,30 @@ public class CalculaImc {
         return result;
     }
     
+    public String verificaImc(double imc, String sexo){
+        String resultado = "";
+        if(sexo.equalsIgnoreCase("Feminino")){
+            if(imc <= 25.8 && imc >= 19.1){
+                resultado = "Peso ideal";
+            } else if(imc > 25.8){
+                resultado = "Acima do peso";
+            } else{
+                resultado = "Abaixo do peso";
+            }
+        } else if(sexo.equalsIgnoreCase("Masculino")){
+            if(imc <= 26.4 && imc >= 20.7){
+                resultado = "Peso ideal";
+            } else if(imc > 26.4){
+                resultado = "Acima do peso";
+            } else{
+                resultado = "Abaixo do peso";
+            }            
+        } else{
+            resultado = "Sexo inválido";
+        }
+        return resultado;
+    }
+    
     public String getSexo() {
         return sexo;
     }
